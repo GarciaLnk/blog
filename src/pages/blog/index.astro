@@ -1,0 +1,58 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+
+  <body class="h-full">
+    <div class="flex flex-col min-h-screen">
+      <Header current="blog" />
+      <main class="flex-1 relative mx-auto max-w-7xl p-4 w-full flex flex-col">
+        <div class="max-w-2xl mx-auto w-full px-4">
+          <h1 class="font-bold leading-tight mb-2">Blog</h1>
+          {
+            posts.map((post, index) => {
+              const href = `/blog/${post.slug}/`;
+              return (
+                <div>
+                  {index !== 0 && <hr class="my-15 mx-auto" />}
+                  <div class="my-6">
+                    <h2 class="font-sans font-bold">
+                      <a
+                        href={href}
+                        class="hover:text-primary underline"
+                        aria-label={post.data.title}
+                      >
+                        {post.data.title}
+                      </a>
+                    </h2>
+                    <p class="text-xl lg:text-2xl">{post.data.description}</p>
+                    <div class="font-sans font-bold">
+                      <span class="text-tsecondary text-left uppercase mr-4">
+                        — <FormattedDate date={post.data.pubDate} />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          }
+        </div>
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
