@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && subfont -ir --root dist",
+    "build": "astro build && subfont -ir --root dist",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write . --plugin=prettier-plugin-astro"
+    "format": "prettier --write . --plugin=prettier-plugin-astro",
+    "check": "svelte-check && astro check --fail-on-warnings"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
@@ -30,6 +31,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "prettier": "^3.2.4",
     "prettier-plugin-astro": "^0.13.0",
-    "subfont": "^6.12.5"
+    "subfont": "^6.12.5",
+    "svelte-check": "^3.6.3"
   }
 }
