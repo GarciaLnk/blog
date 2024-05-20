@@ -12,26 +12,26 @@
     "check": "svelte-check && astro check --fail-on-warnings"
   },
   "dependencies": {
-    "@astrojs/check": "^0.4.1",
-    "@astrojs/mdx": "^2.1.0",
-    "@astrojs/rss": "^4.0.4",
-    "@astrojs/sitemap": "^3.0.5",
-    "@astrojs/svelte": "^5.0.3",
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/mdx": "^3.0.0",
+    "@astrojs/rss": "^4.0.6",
+    "@astrojs/sitemap": "^3.1.4",
+    "@astrojs/svelte": "^5.4.0",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.2.5",
-    "astro-compress": "^2.2.8",
+    "astro": "^4.8.6",
+    "astro-compress": "^2.2.23",
     "rehype-external-links": "^3.0.0",
     "remark-gfm": "^4.0.0",
-    "remark-smartypants": "^2.1.0",
-    "svelte": "^4.2.9",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3"
+    "remark-smartypants": "^3.0.1",
+    "svelte": "^4.2.17",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "prettier": "^3.2.4",
+    "@tailwindcss/typography": "^0.5.13",
+    "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
-    "subfont": "^6.12.5",
-    "svelte-check": "^3.6.3"
+    "subfont": "^7.2.1",
+    "svelte-check": "^3.7.1"
   }
 }
